@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+
+
+<title data-react-helmet="true">Admin Data Model UI | RadGrad 2020</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Admin Data Model UI | RadGrad 2020"><meta data-react-helmet="true" name="description" content="There are several steps involved in adding a new DataModel item to the admin interface. These steps can be done in any order, but you may want to slowly build up the page and test it as you are adding the new DataModel item."><meta data-react-helmet="true" property="og:description" content="There are several steps involved in adding a new DataModel item to the admin interface. These steps can be done in any order, but you may want to slowly build up the page and test it as you are adding the new DataModel item."><meta data-react-helmet="true" property="og:url" content="https://radgrad.github.io/docs/radgrad2/developer/developer-guide-admin-datamodel-ui">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/img/radgrad.ico">
+
+
+<link rel="stylesheet" href="/styles.4f736ef1.css">
+
+
+<link rel="preload" href="/styles.9214617e.js" as="script">
+
+<link rel="preload" href="/runtime~main.cca5c43f.js" as="script">
+
+<link rel="preload" href="/main.eb17cd23.js" as="script">
+
+<link rel="preload" href="/1.eca85ab4.js" as="script">
+
+<link rel="preload" href="/2.da20ba47.js" as="script">
+
+<link rel="preload" href="/3.85d70dde.js" as="script">
+
+<link rel="preload" href="/1be78505.092bee93.js" as="script">
+
+<link rel="preload" href="/20ac7829.e37fd12b.js" as="script">
+
+<link rel="preload" href="/17896441.59d607bd.js" as="script">
+
+<link rel="preload" href="/ab6d2153.a61a4982.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/"><img class="navbar__logo" src="/img/radgrad_logo.png" alt="RadGrad"><strong class="navbar__title">RadGrad</strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/overview/motivation">Docs</a><a class="navbar__item navbar__link" href="/blog">News</a><a target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/" class="navbar__item navbar__link">GitHub</a></div><div class="navbar__items navbar__items--right"><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/"><img class="navbar__logo" src="/img/radgrad_logo.png" alt="RadGrad"><strong class="navbar__title">RadGrad</strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/docs/overview/motivation">Docs</a></li><li class="menu__list-item"><a class="menu__link" href="/blog">News</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">Admin Data Model UI</h1></header><div class="markdown"><p>There are several steps involved in adding a new DataModel item to the admin interface. These steps can be done in any order, but you may want to slowly build up the page and test it as you are adding the new DataModel item.</p><ul><li><p>Create a new admin DataModel route in <code>app/imports/startup/client/router.js</code></p><ol><li><p>Export the name of your new route. For this example we are adding the UI for MentorAnswers. </p><p>   export const adminDataModelMentorAnswersPageRouteName = &#x27;Admin_DataModel_Mentor_Answers_Page&#x27;;</p></li><li><p>Add the route to the FlowRouter admin route group.</p><p>   adminRoutes.route(&#x27;/datamodel/mentor-answers&#x27;, {
+name: adminDataModelMentorAnswersPageRouteName,
+action() {
+BlazeLayout.render(&#x27;Admin_Layout&#x27;, { main: adminDataModelMentorAnswersPageRouteName });
+},
+});</p></li></ol></li><li><p>Update <code>app/imports/ui/components/admin/admin-datamodel-menu.html</code> to include a link to the DataModel Blaze Template page.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">   &lt;a class=&quot;{{isActiveRoute mentorAnswerRouteName}} item&quot; href=&quot;{{pathFor mentorAnswerRouteName username=routeUserName}}&quot;&gt;Mentor Answers&lt;/a&gt;</span></div></div></div></div></div></li></ul><ul><li><p>Update <code>app/imports/ui/components/admin/admin-datamodel-menu.js</code> helper to include a helper for the new route.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">   mentorAnswerRouteName() {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     return RouteNames.adminDataModelMentorAnswersPageRouteName;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   },</span></div></div></div></div></div></li></ul><ul><li><p>Create the DataModel Blaze Template page in <code>app/inports/ui/pages/admin</code>. The name of the page must be the same as the exported page route name. In this example, <code>Admin_DataModel_Mentor_Answers_Page</code>.  </p><ul><li><p>The <code>Admin_DataModel_Mentor_Answers_Page.html</code> will look something like:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain"> &lt;template name=&quot;Admin_DataModel_Mentor_Answers_Page&quot;&gt;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   {{#if Template.subscriptionsReady}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     {{#Admin_DataModel_Layout}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">       {{#if displayUpdateWidget}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">         {{&gt; Update_Mentor_Answer_Widget updateID=updateID}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">       {{else}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">         {{&gt; Add_Mentor_Answer_Widget }}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">       {{/if}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">       {{&gt; List_Mentor_Answers_Widget updateID=updateID}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     {{/Admin_DataModel_Layout}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   {{else}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     {{&gt; Loading message=&quot;Waiting for subscriptions.&quot;}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   {{/if}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> &lt;/template&gt;</span></div></div></div></div></div></li><li><p>The <code>Admin_DataModel_Mentor_Answers_Page.js</code> will look something like:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain"> import { Template } from &#x27;meteor/templating&#x27;;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> import { ReactiveVar } from &#x27;meteor/reactive-var&#x27;;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> Template.Admin_DataModel_Mentor_Answers_Page.helpers({</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   updateID() {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     return Template.instance().updateID;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   },</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   displayUpdateWidget() {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     return Template.instance().updateID.get();</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   },</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> });</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> Template.Admin_DataModel_Mentor_Answers_Page.onCreated(function adminDatamodelMentorAnswerPageOnCreated() {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   this.updateID = new ReactiveVar(&#x27;&#x27;);</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> });</span></div></div></div></div></div></li></ul></li></ul><ul><li><p>Create the List_Mentor_Answer_Widget in <code>app/imports/ui/components/admin</code>.</p></li><li><p>Create the Add_Mentor_Answer_Widget in <code>app/imports/ui/components/admin</code>.</p></li><li><p>Create the Update_Mentor_Answer_Widget in <code>app/imports/ui/components/admin</code>.</p></li></ul></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/markdown-reference">Markdown Guide</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://radgrad2.slack.com">Slack</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/blog">News</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 University of Hawaii.</div></div></div></footer>
+</div>
+
+<script src="/styles.9214617e.js"></script>
+
+<script src="/runtime~main.cca5c43f.js"></script>
+
+<script src="/main.eb17cd23.js"></script>
+
+<script src="/1.eca85ab4.js"></script>
+
+<script src="/2.da20ba47.js"></script>
+
+<script src="/3.85d70dde.js"></script>
+
+<script src="/1be78505.092bee93.js"></script>
+
+<script src="/20ac7829.e37fd12b.js"></script>
+
+<script src="/17896441.59d607bd.js"></script>
+
+<script src="/ab6d2153.a61a4982.js"></script>
+
+
+</body>
+</html>
