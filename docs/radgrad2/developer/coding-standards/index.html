@@ -16,25 +16,25 @@
 <link rel="stylesheet" href="/styles.4f736ef1.css">
 
 
-<link rel="preload" href="/styles.00e0b6e7.js" as="script">
+<link rel="preload" href="/styles.b8e9d2b4.js" as="script">
 
-<link rel="preload" href="/runtime~main.3cca7738.js" as="script">
+<link rel="preload" href="/runtime~main.f84c7117.js" as="script">
 
-<link rel="preload" href="/main.6b4d1e29.js" as="script">
+<link rel="preload" href="/main.6ebe2b8e.js" as="script">
 
-<link rel="preload" href="/1.13b86908.js" as="script">
+<link rel="preload" href="/1.bbb42f09.js" as="script">
 
-<link rel="preload" href="/2.b232cd9a.js" as="script">
+<link rel="preload" href="/2.5ad86fcd.js" as="script">
 
-<link rel="preload" href="/3.725c1061.js" as="script">
+<link rel="preload" href="/3.06ecb9a1.js" as="script">
 
-<link rel="preload" href="/1be78505.f6269689.js" as="script">
+<link rel="preload" href="/1be78505.1d43150b.js" as="script">
 
-<link rel="preload" href="/20ac7829.6988fa46.js" as="script">
+<link rel="preload" href="/20ac7829.c6471a41.js" as="script">
 
-<link rel="preload" href="/17896441.5010a00f.js" as="script">
+<link rel="preload" href="/17896441.a77a09c4.js" as="script">
 
-<link rel="preload" href="/dbbeb17e.eef64829.js" as="script">
+<link rel="preload" href="/dbbeb17e.88bffced.js" as="script">
 
 </head>
 <body>
@@ -44,25 +44,25 @@
 The <a href="http://courses.ics.hawaii.edu/ics314f19/morea/coding-standards/experience-install-eslint.html">ICS 314 instructions on ESLint in IntelliJ</a> provides detailed instructions on run ESLint in IntelliJ.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="naming-conventions"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#naming-conventions" title="Direct link to heading">#</a>Naming conventions</h2><p>Directories are all lowercase, hyphens separate words. For example, <code>degree-program</code>.</p><p>Javascript classes are named in camel-case. For example, <code>DegreeProgram</code>.</p><p>Meteor methods should be placed in their own file, typically in a directory containing the definition of the Collection that they operate on.  They should be named with the extension <code>methods.js</code>.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="jsdoctsdoc-conventions"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#jsdoctsdoc-conventions" title="Direct link to heading">#</a>JSDoc/TSDoc conventions</h2><p>TBD.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="testing-conventions"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#testing-conventions" title="Direct link to heading">#</a>Testing conventions</h2><p>All complex functions should have an associated unit test. </p><p>Complex tests may need a DB fixture to be loaded in order to set up the DB state correctly.</p><p>Methods should have integration tests to ensure that client-server communication works properly. </p><p>See the <a href="/docs/radgrad2/developer/developer-guide-testing">Testing section</a> for more details.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="import-paths"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#import-paths" title="Direct link to heading">#</a>Import paths</h2><p>There are two ways to specify import paths: absolute and relative.</p><p>Absolute:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">import BaseInstanceCollection from &#x27;/imports/api/base/BaseInstanceCollection&#x27;;</span></div></div></div></div></div><p>Relative:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">import BaseInstanceCollection from &#x27;../base/BaseInstanceCollection&#x27;;</span></div></div></div></div></div><p>Please use relative paths, because IntelliJ can perform completion and refactoring on relative paths but not absolute paths.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/radgrad2/developer/source-code-organization"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Source Code Organization</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/radgrad2/developer/testing"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Testing »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#eslint" class="contents__link">ESLint</a></li><li><a href="#naming-conventions" class="contents__link">Naming conventions</a></li><li><a href="#jsdoctsdoc-conventions" class="contents__link">JSDoc/TSDoc conventions</a></li><li><a href="#testing-conventions" class="contents__link">Testing conventions</a></li><li><a href="#import-paths" class="contents__link">Import paths</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/markdown-reference">Markdown Guide</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://radgrad2.slack.com">Slack</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/blog">News</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 University of Hawaii.</div></div></div></footer>
 </div>
 
-<script src="/styles.00e0b6e7.js"></script>
+<script src="/styles.b8e9d2b4.js"></script>
 
-<script src="/runtime~main.3cca7738.js"></script>
+<script src="/runtime~main.f84c7117.js"></script>
 
-<script src="/main.6b4d1e29.js"></script>
+<script src="/main.6ebe2b8e.js"></script>
 
-<script src="/1.13b86908.js"></script>
+<script src="/1.bbb42f09.js"></script>
 
-<script src="/2.b232cd9a.js"></script>
+<script src="/2.5ad86fcd.js"></script>
 
-<script src="/3.725c1061.js"></script>
+<script src="/3.06ecb9a1.js"></script>
 
-<script src="/1be78505.f6269689.js"></script>
+<script src="/1be78505.1d43150b.js"></script>
 
-<script src="/20ac7829.6988fa46.js"></script>
+<script src="/20ac7829.c6471a41.js"></script>
 
-<script src="/17896441.5010a00f.js"></script>
+<script src="/17896441.a77a09c4.js"></script>
 
-<script src="/dbbeb17e.eef64829.js"></script>
+<script src="/dbbeb17e.88bffced.js"></script>
 
 
 </body>
