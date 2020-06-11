@@ -16,25 +16,25 @@
 <link rel="stylesheet" href="/styles.4f736ef1.css">
 
 
-<link rel="preload" href="/styles.3f03f8a9.js" as="script">
+<link rel="preload" href="/styles.b22e1da8.js" as="script">
 
-<link rel="preload" href="/runtime~main.1611f977.js" as="script">
+<link rel="preload" href="/runtime~main.77ba2934.js" as="script">
 
-<link rel="preload" href="/main.bf6de84c.js" as="script">
+<link rel="preload" href="/main.82bbbb9b.js" as="script">
 
-<link rel="preload" href="/1.f7197e93.js" as="script">
+<link rel="preload" href="/1.098ec658.js" as="script">
 
-<link rel="preload" href="/2.0194b544.js" as="script">
+<link rel="preload" href="/2.371af6f9.js" as="script">
 
-<link rel="preload" href="/3.88227b28.js" as="script">
+<link rel="preload" href="/3.63b1c1a7.js" as="script">
 
-<link rel="preload" href="/1be78505.a63f384a.js" as="script">
+<link rel="preload" href="/1be78505.b634287b.js" as="script">
 
-<link rel="preload" href="/20ac7829.1e95dc98.js" as="script">
+<link rel="preload" href="/20ac7829.b8cb2c50.js" as="script">
 
-<link rel="preload" href="/17896441.988a3144.js" as="script">
+<link rel="preload" href="/17896441.590f1927.js" as="script">
 
-<link rel="preload" href="/ab47a6b2.3e8c6294.js" as="script">
+<link rel="preload" href="/ab6d2153.928ee92d.js" as="script">
 
 </head>
 <body>
@@ -48,25 +48,25 @@ BlazeLayout.render(&#x27;Admin_Layout&#x27;, { main: adminDataModelMentorAnswers
 });</p></li></ol></li><li><p>Update <code>app/imports/ui/components/admin/admin-datamodel-menu.html</code> to include a link to the DataModel Blaze Template page.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">   &lt;a class=&quot;{{isActiveRoute mentorAnswerRouteName}} item&quot; href=&quot;{{pathFor mentorAnswerRouteName username=routeUserName}}&quot;&gt;Mentor Answers&lt;/a&gt;</span></div></div></div></div></div></li></ul><ul><li><p>Update <code>app/imports/ui/components/admin/admin-datamodel-menu.js</code> helper to include a helper for the new route.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">   mentorAnswerRouteName() {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     return RouteNames.adminDataModelMentorAnswersPageRouteName;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   },</span></div></div></div></div></div></li></ul><ul><li><p>Create the DataModel Blaze Template page in <code>app/inports/ui/pages/admin</code>. The name of the page must be the same as the exported page route name. In this example, <code>Admin_DataModel_Mentor_Answers_Page</code>.  </p><ul><li><p>The <code>Admin_DataModel_Mentor_Answers_Page.html</code> will look something like:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain"> &lt;template name=&quot;Admin_DataModel_Mentor_Answers_Page&quot;&gt;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   {{#if Template.subscriptionsReady}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     {{#Admin_DataModel_Layout}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">       {{#if displayUpdateWidget}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">         {{&gt; Update_Mentor_Answer_Widget updateID=updateID}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">       {{else}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">         {{&gt; Add_Mentor_Answer_Widget }}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">       {{/if}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">       {{&gt; List_Mentor_Answers_Widget updateID=updateID}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     {{/Admin_DataModel_Layout}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   {{else}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     {{&gt; Loading message=&quot;Waiting for subscriptions.&quot;}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   {{/if}}</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> &lt;/template&gt;</span></div></div></div></div></div></li><li><p>The <code>Admin_DataModel_Mentor_Answers_Page.js</code> will look something like:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain"> import { Template } from &#x27;meteor/templating&#x27;;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> import { ReactiveVar } from &#x27;meteor/reactive-var&#x27;;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> Template.Admin_DataModel_Mentor_Answers_Page.helpers({</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   updateID() {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     return Template.instance().updateID;</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   },</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   displayUpdateWidget() {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">     return Template.instance().updateID.get();</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   },</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> });</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> Template.Admin_DataModel_Mentor_Answers_Page.onCreated(function adminDatamodelMentorAnswerPageOnCreated() {</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">   this.updateID = new ReactiveVar(&#x27;&#x27;);</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> });</span></div></div></div></div></div></li></ul></li></ul><ul><li><p>Create the List_Mentor_Answer_Widget in <code>app/imports/ui/components/admin</code>.</p></li><li><p>Create the Add_Mentor_Answer_Widget in <code>app/imports/ui/components/admin</code>.</p></li><li><p>Create the Update_Mentor_Answer_Widget in <code>app/imports/ui/components/admin</code>.</p></li></ul></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/markdown-reference">Markdown Guide</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://radgrad2.slack.com">Slack</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/blog">News</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 University of Hawaii.</div></div></div></footer>
 </div>
 
-<script src="/styles.3f03f8a9.js"></script>
+<script src="/styles.b22e1da8.js"></script>
 
-<script src="/runtime~main.1611f977.js"></script>
+<script src="/runtime~main.77ba2934.js"></script>
 
-<script src="/main.bf6de84c.js"></script>
+<script src="/main.82bbbb9b.js"></script>
 
-<script src="/1.f7197e93.js"></script>
+<script src="/1.098ec658.js"></script>
 
-<script src="/2.0194b544.js"></script>
+<script src="/2.371af6f9.js"></script>
 
-<script src="/3.88227b28.js"></script>
+<script src="/3.63b1c1a7.js"></script>
 
-<script src="/1be78505.a63f384a.js"></script>
+<script src="/1be78505.b634287b.js"></script>
 
-<script src="/20ac7829.1e95dc98.js"></script>
+<script src="/20ac7829.b8cb2c50.js"></script>
 
-<script src="/17896441.988a3144.js"></script>
+<script src="/17896441.590f1927.js"></script>
 
-<script src="/ab47a6b2.3e8c6294.js"></script>
+<script src="/ab6d2153.928ee92d.js"></script>
 
 
 </body>
