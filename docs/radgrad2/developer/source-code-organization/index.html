@@ -8,33 +8,33 @@
 
 <title data-react-helmet="true">Source Code Organization | RadGrad 2020</title>
 
-<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Source Code Organization | RadGrad 2020"><meta data-react-helmet="true" name="description" content="## Directory Overview"><meta data-react-helmet="true" property="og:description" content="## Directory Overview"><meta data-react-helmet="true" property="og:url" content="https://radgrad.github.io/docs/radgrad2/developer/source-code-organization">
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Source Code Organization | RadGrad 2020"><meta data-react-helmet="true" name="description" content="## Directory Overview"><meta data-react-helmet="true" property="og:description" content="## Directory Overview"><meta data-react-helmet="true" property="og:url" content="https://radgrad.github.io/docs/radgrad2/developer/source-code-organization">
 
 <link data-react-helmet="true" rel="shortcut icon" href="/img/radgrad.ico">
 
 
-<link rel="stylesheet" href="/styles.4f736ef1.css">
+<link rel="stylesheet" href="/styles.f2d7aa96.css">
 
 
-<link rel="preload" href="/styles.2e0f19fa.js" as="script">
+<link rel="preload" href="/styles.33724544.js" as="script">
 
-<link rel="preload" href="/runtime~main.6079f64f.js" as="script">
+<link rel="preload" href="/runtime~main.03578e7c.js" as="script">
 
-<link rel="preload" href="/main.49a2307e.js" as="script">
+<link rel="preload" href="/main.a231a2dc.js" as="script">
 
-<link rel="preload" href="/1.6d062453.js" as="script">
+<link rel="preload" href="/1.0e36849d.js" as="script">
 
-<link rel="preload" href="/2.d88a8500.js" as="script">
+<link rel="preload" href="/2.51717e34.js" as="script">
 
-<link rel="preload" href="/3.50e64638.js" as="script">
+<link rel="preload" href="/3.31b1230f.js" as="script">
 
-<link rel="preload" href="/1be78505.be4c0f0f.js" as="script">
+<link rel="preload" href="/1be78505.5e618ba6.js" as="script">
 
-<link rel="preload" href="/20ac7829.6622d015.js" as="script">
+<link rel="preload" href="/20ac7829.56fb7353.js" as="script">
 
-<link rel="preload" href="/17896441.563cae8f.js" as="script">
+<link rel="preload" href="/17896441.1deddb3d.js" as="script">
 
-<link rel="preload" href="/489f06ed.aa97930a.js" as="script">
+<link rel="preload" href="/97e62e1f.b0c4d80a.js" as="script">
 
 </head>
 <body>
@@ -44,25 +44,25 @@
 statements in client/ and server/ that are responsible for loading this code. </p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="radgrad2apptypings"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#radgrad2apptypings" title="Direct link to heading">#</a>radgrad2/app/typings</h3><p>The /typings directory has Typescript type files <code>*.d.ts</code> for the different packages we are using. The most important file is <code>radgrad.d.ts</code>. This file defines the types for RadGrad2.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="radgrad2appimportsui"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#radgrad2appimportsui" title="Direct link to heading">#</a>radgrad2/app/imports/ui</h3><p>The ui/ subdirectory contains all of the client-side code for implementing the user interface. We follow the recommended Meteor convention of using &quot;layouts&quot; to provide a standard organization for multiple pages, &quot;pages&quot; to indicate the contents of a page for which there is a URL, and &quot;components&quot; to indicate UI elements that are embedded within a page (and may exist on multiple pages).</p><p>So, the ui/ directory structure is:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">ui/</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  components/    # widgets within a page.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  layouts/       # organization for multiple pages.     </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  pages/         # URL-accessible page.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  stylesheets/   # currently empty.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  utilities/     # cross-cutting utility code for UI.</span></div></div></div></div></div><p>Within each of these directories are subdirectories. In many cases, the subdirectories reflect a division based on role. So, for example, there is a subdirectory called &quot;advisor/&quot; in each of the components, layouts, and pages/ directories. </p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="custom-in-radgrad2"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#custom-in-radgrad2" title="Direct link to heading">#</a><code>custom/</code> in RadGrad2</h2><p>In RadGrad2, we ignore any directories and files named <code>custom</code> that appear in the project. Being in the <code>.gitignore</code> means that any file or directory matching that pattern can not be committed to the repository unless explicitly told otherwise. Thus, any files to be automatically kept out of the repository should be placed in a <code>custom/</code> directory anywhere in the project.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/radgrad2/developer/ide"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« IDE Setup</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/radgrad2/developer/coding-standards"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Coding Standards »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#directory-overview" class="contents__link">Directory Overview</a></li><li><a href="#radgrad2app" class="contents__link">radgrad2/app/</a><ul><li><a href="#radgrad2appimports" class="contents__link">radgrad2/app/imports</a></li><li><a href="#radgrad2appimportsapi" class="contents__link">radgrad2/app/imports/api</a></li><li><a href="#radgrad2appimportsredux" class="contents__link">radgrad2/app/imports/redux</a></li><li><a href="#radgrad2appimportsstartup" class="contents__link">radgrad2/app/imports/startup</a></li><li><a href="#radgrad2apptypings" class="contents__link">radgrad2/app/typings</a></li><li><a href="#radgrad2appimportsui" class="contents__link">radgrad2/app/imports/ui</a></li></ul></li><li><a href="#custom-in-radgrad2" class="contents__link"><code>custom/</code> in RadGrad2</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/markdown-reference">Markdown Guide</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://radgrad2.slack.com">Slack</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/blog">News</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 University of Hawaii.</div></div></div></footer>
 </div>
 
-<script src="/styles.2e0f19fa.js"></script>
+<script src="/styles.33724544.js"></script>
 
-<script src="/runtime~main.6079f64f.js"></script>
+<script src="/runtime~main.03578e7c.js"></script>
 
-<script src="/main.49a2307e.js"></script>
+<script src="/main.a231a2dc.js"></script>
 
-<script src="/1.6d062453.js"></script>
+<script src="/1.0e36849d.js"></script>
 
-<script src="/2.d88a8500.js"></script>
+<script src="/2.51717e34.js"></script>
 
-<script src="/3.50e64638.js"></script>
+<script src="/3.31b1230f.js"></script>
 
-<script src="/1be78505.be4c0f0f.js"></script>
+<script src="/1be78505.5e618ba6.js"></script>
 
-<script src="/20ac7829.6622d015.js"></script>
+<script src="/20ac7829.56fb7353.js"></script>
 
-<script src="/17896441.563cae8f.js"></script>
+<script src="/17896441.1deddb3d.js"></script>
 
-<script src="/489f06ed.aa97930a.js"></script>
+<script src="/97e62e1f.b0c4d80a.js"></script>
 
 
 </body>
