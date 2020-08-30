@@ -8,7 +8,7 @@
 
 <title data-react-helmet="true">RadGrad Anti-Patterns | RadGrad 2020</title>
 
-<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="RadGrad Anti-Patterns | RadGrad 2020"><meta data-react-helmet="true" name="description" content="## Anti-Patterns in RadGrad1"><meta data-react-helmet="true" property="og:description" content="## Anti-Patterns in RadGrad1"><meta data-react-helmet="true" property="og:url" content="https://radgrad.github.io/docs/radgrad2/developer/radgrad-anti-patterns">
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="RadGrad Anti-Patterns | RadGrad 2020"><meta data-react-helmet="true" name="description" content="## Anti-Patterns in RadGrad1"><meta data-react-helmet="true" property="og:description" content="## Anti-Patterns in RadGrad1"><meta data-react-helmet="true" property="og:url" content="https://radgrad.github.io/docs/radgrad2/developer/radgrad-anti-patterns">
 
 <link data-react-helmet="true" rel="shortcut icon" href="/img/radgrad.ico">
 
@@ -16,25 +16,25 @@
 <link rel="stylesheet" href="/styles.4f736ef1.css">
 
 
-<link rel="preload" href="/styles.b41438ce.js" as="script">
+<link rel="preload" href="/styles.5c80c7b0.js" as="script">
 
-<link rel="preload" href="/runtime~main.0bd577a1.js" as="script">
+<link rel="preload" href="/runtime~main.9a2774a5.js" as="script">
 
-<link rel="preload" href="/main.a9979c4e.js" as="script">
+<link rel="preload" href="/main.9e8a3136.js" as="script">
 
-<link rel="preload" href="/1.7845ab9e.js" as="script">
+<link rel="preload" href="/1.55765b01.js" as="script">
 
-<link rel="preload" href="/2.e5768545.js" as="script">
+<link rel="preload" href="/2.f920d172.js" as="script">
 
-<link rel="preload" href="/3.4aeb749f.js" as="script">
+<link rel="preload" href="/3.42c0ee9a.js" as="script">
 
-<link rel="preload" href="/1be78505.071357e8.js" as="script">
+<link rel="preload" href="/1be78505.9a5674c4.js" as="script">
 
-<link rel="preload" href="/20ac7829.fc800ef1.js" as="script">
+<link rel="preload" href="/20ac7829.ccc580ea.js" as="script">
 
-<link rel="preload" href="/17896441.868d5528.js" as="script">
+<link rel="preload" href="/17896441.53868b17.js" as="script">
 
-<link rel="preload" href="/8f1ae0a5.a37e10fd.js" as="script">
+<link rel="preload" href="/e72e75a1.431be824.js" as="script">
 
 </head>
 <body>
@@ -43,25 +43,25 @@
 <nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/"><img class="navbar__logo" src="/img/radgrad_logo.png" alt="RadGrad"><strong class="navbar__title">RadGrad</strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/overview/motivation">Docs</a><a class="navbar__item navbar__link" href="/blog">News</a><a target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/" class="navbar__item navbar__link">GitHub</a></div><div class="navbar__items navbar__items--right"><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/"><img class="navbar__logo" src="/img/radgrad_logo.png" alt="RadGrad"><strong class="navbar__title">RadGrad</strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/docs/overview/motivation">Docs</a></li><li class="menu__list-item"><a class="menu__link" href="/blog">News</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">RadGrad Anti-Patterns</h1></header><div class="markdown"><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="anti-patterns-in-radgrad1"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#anti-patterns-in-radgrad1" title="Direct link to heading">#</a>Anti-Patterns in RadGrad1</h2><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="too-many-or-unused-helpers"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#too-many-or-unused-helpers" title="Direct link to heading">#</a>Too many or unused helpers</h3><p>RadGrad1 uses Blaze as the rendering engine. In many of our Blaze templates we have unused helper methods. Meteor runs all the helper methods even though they are not used in the HTML template.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="use-of-strings-to-identify-things"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#use-of-strings-to-identify-things" title="Direct link to heading">#</a>Use of Strings to identify things</h3><ul><li>Publication and Subscription</li><li>User Interactions</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="anti-patterns-in-radgrad2"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#anti-patterns-in-radgrad2" title="Direct link to heading">#</a>Anti-Patterns in RadGrad2</h2><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="circular-imports"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#circular-imports" title="Direct link to heading">#</a>Circular imports</h3><p>Currently, we have many circular imports in RadGrad2.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="use-of-strings-to-identify-things-1"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#use-of-strings-to-identify-things-1" title="Direct link to heading">#</a>Use of Strings to identify things</h3><ul><li>Publication and Subscription</li><li>User Interactions</li></ul></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#anti-patterns-in-radgrad1" class="contents__link">Anti-Patterns in RadGrad1</a><ul><li><a href="#too-many-or-unused-helpers" class="contents__link">Too many or unused helpers</a></li><li><a href="#use-of-strings-to-identify-things" class="contents__link">Use of Strings to identify things</a></li></ul></li><li><a href="#anti-patterns-in-radgrad2" class="contents__link">Anti-Patterns in RadGrad2</a><ul><li><a href="#circular-imports" class="contents__link">Circular imports</a></li><li><a href="#use-of-strings-to-identify-things-1" class="contents__link">Use of Strings to identify things</a></li></ul></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/markdown-reference">Markdown Guide</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://radgrad2.slack.com">Slack</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/blog">News</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 University of Hawaii.</div></div></div></footer>
 </div>
 
-<script src="/styles.b41438ce.js"></script>
+<script src="/styles.5c80c7b0.js"></script>
 
-<script src="/runtime~main.0bd577a1.js"></script>
+<script src="/runtime~main.9a2774a5.js"></script>
 
-<script src="/main.a9979c4e.js"></script>
+<script src="/main.9e8a3136.js"></script>
 
-<script src="/1.7845ab9e.js"></script>
+<script src="/1.55765b01.js"></script>
 
-<script src="/2.e5768545.js"></script>
+<script src="/2.f920d172.js"></script>
 
-<script src="/3.4aeb749f.js"></script>
+<script src="/3.42c0ee9a.js"></script>
 
-<script src="/1be78505.071357e8.js"></script>
+<script src="/1be78505.9a5674c4.js"></script>
 
-<script src="/20ac7829.fc800ef1.js"></script>
+<script src="/20ac7829.ccc580ea.js"></script>
 
-<script src="/17896441.868d5528.js"></script>
+<script src="/17896441.53868b17.js"></script>
 
-<script src="/8f1ae0a5.a37e10fd.js"></script>
+<script src="/e72e75a1.431be824.js"></script>
 
 
 </body>
