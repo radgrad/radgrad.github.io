@@ -16,25 +16,25 @@
 <link rel="stylesheet" href="/styles.4f736ef1.css">
 
 
-<link rel="preload" href="/styles.8cf6a497.js" as="script">
+<link rel="preload" href="/styles.249325f7.js" as="script">
 
-<link rel="preload" href="/runtime~main.2ecb3451.js" as="script">
+<link rel="preload" href="/runtime~main.8a277ae3.js" as="script">
 
-<link rel="preload" href="/main.a676b038.js" as="script">
+<link rel="preload" href="/main.27a1aa7f.js" as="script">
 
-<link rel="preload" href="/1.ce796892.js" as="script">
+<link rel="preload" href="/1.da2305d5.js" as="script">
 
-<link rel="preload" href="/2.7385ab9a.js" as="script">
+<link rel="preload" href="/2.411529d0.js" as="script">
 
-<link rel="preload" href="/3.9ba032f5.js" as="script">
+<link rel="preload" href="/3.5c759e26.js" as="script">
 
-<link rel="preload" href="/1be78505.c68842d5.js" as="script">
+<link rel="preload" href="/1be78505.98c524af.js" as="script">
 
-<link rel="preload" href="/20ac7829.d3f6a7b5.js" as="script">
+<link rel="preload" href="/20ac7829.cd7c72a5.js" as="script">
 
-<link rel="preload" href="/17896441.ba7c58cd.js" as="script">
+<link rel="preload" href="/17896441.52abebc5.js" as="script">
 
-<link rel="preload" href="/764284f8.a25673a2.js" as="script">
+<link rel="preload" href="/58feaae0.7918c909.js" as="script">
 
 </head>
 <body>
@@ -71,25 +71,25 @@ After installing, follow the instructions on screen. They will have you log into
 </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">To view your application in the web browser run:</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  $ gcloud app browse -s my-service-name</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">INFO: Display format: &quot;none&quot;</span></div></div></div></div></div><h6><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="note-this-was-done-on-a-windows-10-system-using-windows-subsystem-for-linux-2-wsl-2"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#note-this-was-done-on-a-windows-10-system-using-windows-subsystem-for-linux-2-wsl-2" title="Direct link to heading">#</a>Note: This was done on a Windows 10 System using Windows Subsystem for Linux 2 (WSL 2)</h6><h4><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="installation"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#installation" title="Direct link to heading">#</a>Installation</h4><p>Open up Windows Powershell as administrator and use <code>npm install meteor-google-cloud -g</code>.</p><h4><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="google-cloud-cli"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#google-cloud-cli" title="Direct link to heading">#</a>Google Cloud CLI</h4><p>Login in to your google account. On the cloud console, go to the cloud selector page, and create a new project. Ensure billing is enabled.</p><p>(Image to be added)</p><p>On your terminal (not Powershell), use <code>sudo apt-get install apt-transport-https ca-certificates gnupg</code> to install apt-transport-https. Use <code>echo &quot;deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list</code> to add the cloud SDK distribution.</p><p>Import the public key with <code>curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -</code></p><p>Update the SDK with <code>sudo apt-get update</code></p><p>Install the SDK with <code>sudo apt-get install google-cloud-sdk</code></p><h4><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="deployment"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#deployment" title="Direct link to heading">#</a>Deployment</h4><p>Use <code>git clone https://github.com/ics-software-engineering/meteor-application-template.git</code> to clone the Meteor Application Template from Github. Change into the app directory.</p><p>Use <code>gcloud init</code> to create the deploy directory with the necessary files for deployment.</p><p>Use <code>gcloud app create</code> to start the app and pick the region closest to you.</p><p>Change into the deploy directory and edit the <code>settings.json</code> file. Change the project name to the project id of the project you created earlier on your cloud console. Edit the <code>app.yml</code> file and change the service to <code>default</code>.</p><p>(Image to be added)</p><p>Deploy using <code>meteor-google-cloud --settings deploy/settings.json --app deploy/app.yml --docker deploy/Dockerfile</code></p><h4><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="potential-problems"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#potential-problems" title="Direct link to heading">#</a>Potential Problems</h4><p>During my personal attempt of deployment, it was lacking a few things. I used <code>meteor npm install --save @babel/runtime simpl-schema uniforms-bridge-simple-schema-2 moment lodash faker react react-dom react-redux connected-react-router react-router-dom react-router semantic-ui-react react-scroll-up-button react-slick slick-carousel react-markdown uniforms-semantic classnames uniforms sweetalert2 react-datepicker highcharts highcharts-react-official react-beautiful-dnd redux react-content-loader history</code> and <code>meteor npm install --save simpl-schema moment lodash faker</code> to obtain all the things I was missing. </p><p>During the final stages of deployment, I ran into a MongoNetworkError and the APP_CONTAINER_CRASHED. According to the official <a href="https://docs.meteor.com/api/collections.html#mongo_connection_options">documentation</a>, this is a known bug that is currently being fixed. I tried the bypasses suggested, though neither has worked for me. Currently searching for a solution.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="evaluation"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#evaluation" title="Direct link to heading">#</a>Evaluation</h2><p>Please provide information about problems that occurred. Costs of service. Performance. Quality of documentation. Anything else that would be of use in deciding whether or not to choose this service over others.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/devops/deployment/digital-ocean"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Digital Ocean</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/devops/deployment/microsoft-azure"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Microsoft Azure »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#deployment-documentation" class="contents__link">Deployment Documentation</a></li><li><a href="#evaluation" class="contents__link">Evaluation</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/markdown-reference">Markdown Guide</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://radgrad2.slack.com">Slack</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/blog">News</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://github.com/radgrad/">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 University of Hawaii.</div></div></div></footer>
 </div>
 
-<script src="/styles.8cf6a497.js"></script>
+<script src="/styles.249325f7.js"></script>
 
-<script src="/runtime~main.2ecb3451.js"></script>
+<script src="/runtime~main.8a277ae3.js"></script>
 
-<script src="/main.a676b038.js"></script>
+<script src="/main.27a1aa7f.js"></script>
 
-<script src="/1.ce796892.js"></script>
+<script src="/1.da2305d5.js"></script>
 
-<script src="/2.7385ab9a.js"></script>
+<script src="/2.411529d0.js"></script>
 
-<script src="/3.9ba032f5.js"></script>
+<script src="/3.5c759e26.js"></script>
 
-<script src="/1be78505.c68842d5.js"></script>
+<script src="/1be78505.98c524af.js"></script>
 
-<script src="/20ac7829.d3f6a7b5.js"></script>
+<script src="/20ac7829.cd7c72a5.js"></script>
 
-<script src="/17896441.ba7c58cd.js"></script>
+<script src="/17896441.52abebc5.js"></script>
 
-<script src="/764284f8.a25673a2.js"></script>
+<script src="/58feaae0.7918c909.js"></script>
 
 
 </body>
